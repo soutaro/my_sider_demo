@@ -18,8 +18,7 @@
     <section>
       <% @user.microposts.each do |post| %>
         <div>
-          <%# It has XSS, so Brakeman warns it. %>
-          <div><%= "<strong>#{post.content}<strong>".html_safe %></div>
+          <div><strong><%= post.content %></strong></div>
           <div><small>creaeted: <%= post.created_at %></small></div>
         </div>
       <% end %>
