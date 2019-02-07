@@ -1,0 +1,4 @@
+rules:
+  - id: test
+    message: "Should use File.open"
+    pattern: self.open
