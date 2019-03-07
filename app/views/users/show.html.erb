@@ -7,5 +7,21 @@
         <%= @user.name %>
       </h1>
     </section>
+
+    <section>
+      <%= form_for(Micropost.new(user: @user)) do |f| %>
+        <%= f.text_area :content %>
+        <%= f.submit %>
+      <% end %>
+    </section>
+
+    <section>
+      <% @user.microposts.each do |post| %>
+        <div>
+          <div><strong><%= post.content %></strong></div>
+          <div><small>creaeted: <%= post.created_at %></small></div>
+        </div>
+      <% end %>
+    </section>
   </aside>
 </div>
